@@ -13,6 +13,11 @@ from .models import (
 )
 
 
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ('order_number', 'manager_code', 'client', 'order_date')
+
+
 @admin.register(Supplier)
 class SupplierAdmin(admin.ModelAdmin):
     list_display = ('supplier_code', 'address', 'phone')
@@ -26,11 +31,6 @@ class ProductOrderAdmin(admin.ModelAdmin):
 @admin.register(SupplierInvoice)
 class SupplierInvoiceAdmin(admin.ModelAdmin):
     list_display = ('supplier_order_number', 'manager_code', 'amount', 'payment_date')
-
-
-@admin.register(Order)
-class OrderAdmin(admin.ModelAdmin):
-    list_display = ('supplier_order_number', 'manager_code', 'supplier_code', 'order_date', 'status')
 
 
 @admin.register(Product)
