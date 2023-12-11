@@ -21,7 +21,7 @@ from .models import (
 class OrderSupplierAdmin(admin.ModelAdmin):
     list_display = ('supplier_order_number', 'manager_code', 'supplier_code', 'order_date', 'status')
 
-    
+
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
     list_display = ('client_code', 'last_name', 'first_name', 'address', 'phone')

@@ -1,0 +1,46 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+
+{% block content %}
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        .menu {
+            margin-top: 20px;
+        }
+        .menu-item {
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Меню</a>
+        </div>
+    </nav>
+
+    <div class="container menu">
+        <div class="list-group">
+            <h2>Основные функции</h2>
+            <a href="http://127.0.0.1:8000/admin/" class="list-group-item list-group-item-action menu-item">Просмотр базы данных</a>
+            <a href="http://127.0.0.1:8000/admin/shop/order/add/" class="list-group-item list-group-item-action menu-item">Создать заказ клиента</a>
+            <a href="http://127.0.0.1:8000/admin/shop/cart/" class="list-group-item list-group-item-action menu-item">Создать отчет по продажам</a>
+            <a href="http://127.0.0.1:8000/admin/shop/category/" class="list-group-item list-group-item-action menu-item">Создать запрос на поставку</a>
+            <a href="http://127.0.0.1:8000/admin/shop/client/" class="list-group-item list-group-item-action menu-item">Создать отчет по закупкам</a>
+
+            <h2>Таблицы базы данных</h2>
+            <a href="http://127.0.0.1:8000/admin/shop/client/" class="list-group-item list-group-item-action menu-item">Клиенты</a>
+            <a href="http://127.0.0.1:8000/admin/shop/customerinvoice/" class="list-group-item list-group-item-action menu-item">Счёт клиента</a>
+            <a href="http://127.0.0.1:8000/admin/shop/manager/" class="list-group-item list-group-item-action menu-item">Менеджеры</a>
+            <a href="http://127.0.0.1:8000/admin/shop/order/" class="list-group-item list-group-item-action menu-item">Заказы</a>
+            <a href="http://127.0.0.1:8000/admin/shop/product/" class="list-group-item list-group-item-action menu-item">Товары</a>
+            <a href="http://127.0.0.1:8000/admin/shop/supplierinvoice/" class="list-group-item list-group-item-action menu-item">Счёт поставщика</a>
+            <a href="http://127.0.0.1:8000/admin/shop/supplier/" class="list-group-item list-group-item-action menu-item">Поставщики</a>
+            <a href="http://127.0.0.1:8000/admin/shop/warehouse/" class="list-group-item list-group-item-action menu-item">Склады</a>
+            
+        </div>
+    </div>
+
+{% endblock %}
+
