@@ -1,5 +1,8 @@
 from django.contrib import admin
 from .models import (
+    Client,
+    CustomerInvoice,
+    Cart,
     Supplier,
     ProductOrder,
     SupplierInvoice,
@@ -9,8 +12,29 @@ from .models import (
     Category,
     ProductCategory,
     Warehouse,
-    Manager
+    Manager,
+    OrderSupplier
 )
+
+
+@admin.register(OrderSupplier)
+class OrderSupplierAdmin(admin.ModelAdmin):
+    list_display = ('supplier_order_number', 'manager_code', 'supplier_code', 'order_date', 'status')
+
+    
+@admin.register(Client)
+class ClientAdmin(admin.ModelAdmin):
+    list_display = ('client_code', 'last_name', 'first_name', 'address', 'phone')
+
+
+@admin.register(CustomerInvoice)
+class CustomerInvoiceAdmin(admin.ModelAdmin):
+    list_display = ('order_number', 'payment_date', 'amount_due', 'status')
+
+
+@admin.register(Cart)
+class CartAdmin(admin.ModelAdmin):
+    list_display = ('order_number', 'promo_code', 'discount', 'status')
 
 
 @admin.register(Order)
